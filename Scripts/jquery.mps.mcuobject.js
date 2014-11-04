@@ -30,7 +30,6 @@
     $.fn.getMcuVal = function () {
         var $mcu = this,
             mcutype = $mcu.data('mcutype'),
-            keyinField = $mcu.data('keyinField'),
             value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
 
         if (mcutype === 'select2') {
@@ -40,59 +39,12 @@
             $mcu.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
                 value[i] = ele.value;
             });
-        } else if (mcutype === 'flexigrid') {
-            var $grid = $mcu.find('.grid');
-            if (!!!$grid.length) {
-                $grid = $mcu.find('table');
-            }
-            var $gridTrs = $grid.find('tbody tr');
-            value = [];
-            $gridTrs.each(function (i, ele) {
-                var $td = $(ele).find('td');
-                var tmp = [];
-                var coltype = '';
-
-                $td.each(function (j, td) {
-
-
-                    coltype = $(td).find("[data-mcutype='select']").data('mcutype');
-
-                    if (coltype == 'textbox') {
-                        if ($(td).find('input').length != 0) { tmp[j] = $(td).find('input').val(); }
-                    } else if (coltype === "select") {
-                        if ($(td).find('select').length != 0) { tmp[j] = $(td).find('select option:selected').val(); }
-                    }
-                    else if (coltype == 'select2') {
-                        if ($(td).find('select').length != 0) { tmp[j] = $(td).find('select').select2('val'); }
-                    }
-                    else {
-                        tmp[j] = $.trim($(td).text());
-                    }
-
-
-
-                });
-                value[i] = {
-                    cell: tmp
-                };
-            });
-        } else if (mcutype === 'address') {
-            value = [];
-            $mcu.find(':input:not(.select2-input)').each(function (i, ele) {
-                value[i] = $(ele).val().toUpperCase();
-            });
         } else if (mcutype === 'date') {
             value = value.replace(/\//ig, '');
         } else if (mcutype === 'label') {
             value = $mcu.text();
         }
 
-
-
-        var keyinField = $mcu.data('keyinField');
-        if (!!keyinField && !!keyinField.TransCase && keyinField.TransCase == '大寫' && !!value && !$.isArray(value)) {
-            value = value.toUpperCase();
-        }
 
         return value;
     };
