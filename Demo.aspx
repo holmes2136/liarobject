@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-		  <div id="tt" data-mcutype="text">
+		  <div id="tt" data-liartype="text">
                 <input type="text"  />
           </div>
     </div>

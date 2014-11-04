@@ -2,7 +2,7 @@
     'use strict';
     $.fn.getMcuText = function () {
         var $mcu = this,
-            mcutype = $mcu.data('mcutype'),
+            mcutype = $mcu.data('liartype'),
             value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
         if (mcutype === 'select2') {
             value = $mcu.find('select').find("option:selected").text() || '';
@@ -29,7 +29,7 @@
 
     $.fn.getMcuVal = function () {
         var $mcu = this,
-            mcutype = $mcu.data('mcutype'),
+            mcutype = $mcu.data('liartype'),
             value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
 
         if (mcutype === 'select2') {
@@ -52,7 +52,7 @@
 
     $.fn.setMcuVal = function (val) {
         var $mcu = this,
-            mcutype = $mcu.data('mcutype');
+            mcutype = $mcu.data('liartype');
 
         val = val === undefined ? '' : val;
 
@@ -86,7 +86,7 @@
 
     $.fn.setMcuText = function (val) {
         var $mcu = this,
-            mcutype = $mcu.data('mcutype');
+            mcutype = $mcu.data('liartype');
 
         val = val === undefined ? '' : val;
 
