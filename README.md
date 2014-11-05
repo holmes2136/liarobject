@@ -23,5 +23,28 @@ $("#checkbox").find(":checkbox:checked").val();
 $("#input").find(":input").val();
 ```
 
+How to use liarobject
+==========
+
+```javascript
+<script src="jquery-1.8.3.min.js"></script>
+<script src="jquery.mps.liarobject.js"></script>
+```
+
+How liarobject works
+==========
+Just attache data-liartype attribute on control , and liarobject will use it to judge controls
+
+
+```javascript
+<div id="textsample" data-liartype="text">
+     <input type="text"  />
+</div>
+```
+
+
+
+
+
 
 
