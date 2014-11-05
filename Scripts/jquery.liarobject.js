@@ -9,12 +9,7 @@
         } else if (liartype === 'checkgroup') {
             value = [];
             $ctl.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
-
-                value[i] = ele.parentElement.textContent;
-
-                if (value[i] == undefined) {
-                    value[i] = ele.parentElement.innerText;
-                }
+                value[i] = $(ele).parent().text();
             });
         } else if (liartype === 'date') {
             value = value.replace(/\//ig, '');
