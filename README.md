@@ -7,16 +7,21 @@ features :
    
 ```
 
-```javascript
 
+You can
+
+```javascript
 $("#checkgroup").getLiarVal();
 $("#checkbox").getLiarVal();
 $("#input").getLiarVal();
-
-etc..
-
 ```
 
+You don't
+```javascript
+$("#checkgroup").find(":radio:checked").val();
+$("#checkbox").find(":checkbox:checked").val();
+$("#input").find(":input").val();
+```
 
 
 
