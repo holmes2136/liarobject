@@ -37,11 +37,32 @@ How liarobject works
 ==========
 Just attache data-liartype attribute on control , and liarobject will use it to judge controls
 
+Sample 1 : Access input value : 
 
 ```javascript
-<div id="textsample" data-liartype="text">
-     <input type="text"  />
+<div id="Sample1" data-liartype="text">
+     <input type="text"  value="test" />
 </div>
+
+$("#Sample").getLiarVal();
+>>>  test
+```
+
+
+Sample 2 : Access checkgroup value : 
+
+```javascript
+<div id="Sample2" data-liartype="checkgroup">
+     <label>test1
+         <input type="radio" id="group1" name="checkgroup-mcu-1863" value="1"> 
+     </label>
+     <label>test2
+         <input type="radio" id="group2" name="checkgroup-mcu-1863" value="2"> 
+     </label>  
+</div>
+
+$("#Sample2").getLiarVal();
+>>>  ["test1"]
 ```
 
 
