@@ -54,10 +54,10 @@ Sample 2 : Access checkgroup value :
 ```javascript
 <div id="Sample2" data-liartype="checkgroup">
      <label>test1
-         <input type="radio" id="group1"  value="1"> 
+         <input type="radio" id="option1" name="group1"  value="1"> 
      </label>
      <label>test2
-         <input type="radio" id="group2"  value="2"> 
+         <input type="radio" id="option2" name="group2"  value="2"> 
      </label>  
 </div>
 
