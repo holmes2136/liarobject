@@ -1,14 +1,14 @@
 ﻿(function ($) {
     'use strict';
     $.fn.getLiarText = function () {
-        var $mcu = this,
-            mcutype = $mcu.data('liartype'),
-            value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
+        var $clt = this,
+            mcutype = $clt.data('liartype'),
+            value = $clt.find(':text,input[type=number],input[type=email]').val() || $clt.find('textarea').val() || '';
         if (mcutype === 'select2') {
-            value = $mcu.find('select').find("option:selected").text() || '';
+            value = $clt.find('select').find("option:selected").text() || '';
         } else if (mcutype === 'checkgroup') {
             value = [];
-            $mcu.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
+            $clt.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
 
                 value[i] = ele.parentElement.textContent;
 
@@ -19,30 +19,30 @@
         } else if (mcutype === 'date') {
             value = value.replace(/\//ig, '');
         } else if (mcutype === 'label') {
-            value = $mcu.text();
+            value = $clt.text();
         } else if (mcutype === 'hiddenbox') {
-            value = $mcu.children('.span').text();
+            value = $clt.children('.span').text();
         }
 
         return value;
     };
 
     $.fn.getLiarVal = function () {
-        var $mcu = this,
-            mcutype = $mcu.data('liartype'),
-            value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
+        var $clt = this,
+            mcutype = $clt.data('liartype'),
+            value = $clt.find(':text,input[type=number],input[type=email]').val() || $clt.find('textarea').val() || '';
 
         if (mcutype === 'select2') {
-            value = $mcu.find('select').val() || '';
+            value = $clt.find('select').val() || '';
         } else if (mcutype === 'checkgroup') {
             value = [];
-            $mcu.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
+            $clt.find(':checkbox:checked,:radio:checked').each(function (i, ele) {
                 value[i] = ele.value;
             });
         } else if (mcutype === 'date') {
             value = value.replace(/\//ig, '');
         } else if (mcutype === 'label') {
-            value = $mcu.text();
+            value = $clt.text();
         }
 
 
@@ -51,42 +51,42 @@
 
 
     $.fn.setLiarVal = function (val) {
-        var $mcu = this,
-            mcutype = $mcu.data('liartype');
+        var $clt = this,
+            mcutype = $clt.data('liartype');
 
         val = val === undefined ? '' : val;
 
         if (mcutype === 'select2') {
-            $mcu.find('select').select2('val', val);
+            $clt.find('select').select2('val', val);
         } else if (mcutype === 'select') {
-            $mcu.find('select').val(val);
+            $clt.find('select').val(val);
         }
         else if (mcutype === 'checkgroup') {
-            $mcu.find(':checkbox,:radio').prop('checked', 0);
+            $clt.find(':checkbox,:radio').prop('checked', 0);
             if ($.isArray(val)) {
                 $.each(val, function (i, v) {
-                    $mcu.find(':checkbox[value="' + v + '"],:radio[value="' + v + '"]').prop('checked', 1);
+                    $clt.find(':checkbox[value="' + v + '"],:radio[value="' + v + '"]').prop('checked', 1);
                 });
             } else {
                 val = val.indexOf('.') === val.length - 1 ? val.substring(0, val.length - 1) : val;
                 if (!!val && val != "") {
-                    $mcu.find(':checkbox[value="' + val + '"],:radio[value="' + val + '"]').prop('checked', 1);
+                    $clt.find(':checkbox[value="' + val + '"],:radio[value="' + val + '"]').prop('checked', 1);
                 }
             }
         } else if (mcutype === 'date') {
-            $mcu.find(':text').val(val.length === 8 ? val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8) : val);
+            $clt.find(':text').val(val.length === 8 ? val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8) : val);
         } else if (mcutype === 'label') {
-            $mcu.text(val);
+            $clt.text(val);
         } else {
-            $mcu.find(':text,input[type=number],input[type=email], textarea').val(val);
+            $clt.find(':text,input[type=number],input[type=email], textarea').val(val);
         }
 
         return this;
     };
 
     $.fn.setLiarText = function (val) {
-        var $mcu = this,
-            mcutype = $mcu.data('liartype');
+        var $clt = this,
+            mcutype = $clt.data('liartype');
 
         val = val === undefined ? '' : val;
 
@@ -95,11 +95,11 @@
         } else if (mcutype === 'checkgroup') {
 
         } else if (mcutype === 'date') {
-            $mcu.find(':text').val(val.length === 8 ? val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8) : val);
+            $clt.find(':text').val(val.length === 8 ? val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8) : val);
         } else if (mcutype === 'label') {
-            $mcu.text(val);
+            $clt.text(val);
         } else {
-            $mcu.find(':text,input[type=number],input[type=email], textarea').val(val);
+            $clt.find(':text,input[type=number],input[type=email], textarea').val(val);
         }
 
         return this;
