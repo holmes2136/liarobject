@@ -30,7 +30,7 @@ How to use liarobject
 
 ```javascript
 <script src="jquery-1.8.3.min.js"></script>
-<script src="jquery.mps.liarobject.js"></script>
+<script src="jquery.liarobject.js"></script>
 ```
 
 How liarobject works
