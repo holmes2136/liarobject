@@ -3,7 +3,9 @@ liarobject
 
 Features : 
 ```
-1. you can get the value and text from different control by the same interface
+you can get the value and text from different control by the same interface
+
+不再去判斷控制項的類型而去使用相對應的語法 , 統一的存取界面可以幫助你在轉寫 javascript 更有彈性
    
 ```
 
