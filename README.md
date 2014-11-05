@@ -62,7 +62,7 @@ Sample 2 : Access checkgroup value :
 </div>
 
 $("#Sample2").getLiarVal();
->>>  ["test1"]
+>>>  ["1"]
 ```
 
 
