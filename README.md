@@ -3,8 +3,7 @@ liarobject
 
 features : 
 ```
-1. you can get the value and text from different control , such like 
-   input text , checkgroup , checkbox etc..
+1. you can get the value and text from different control by the same interface
    
 ```
 
