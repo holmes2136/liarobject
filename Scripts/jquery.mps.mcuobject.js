@@ -1,6 +1,6 @@
 ﻿(function ($) {
     'use strict';
-    $.fn.getMcuText = function () {
+    $.fn.getLiarText = function () {
         var $mcu = this,
             mcutype = $mcu.data('liartype'),
             value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
@@ -27,7 +27,7 @@
         return value;
     };
 
-    $.fn.getMcuVal = function () {
+    $.fn.getLiarVal = function () {
         var $mcu = this,
             mcutype = $mcu.data('liartype'),
             value = $mcu.find(':text,input[type=number],input[type=email]').val() || $mcu.find('textarea').val() || '';
@@ -50,7 +50,7 @@
     };
 
 
-    $.fn.setMcuVal = function (val) {
+    $.fn.setLiarVal = function (val) {
         var $mcu = this,
             mcutype = $mcu.data('liartype');
 
@@ -84,7 +84,7 @@
         return this;
     };
 
-    $.fn.setMcuText = function (val) {
+    $.fn.setLiarText = function (val) {
         var $mcu = this,
             mcutype = $mcu.data('liartype');
 
@@ -117,11 +117,11 @@
         return this.each(condition == '' || !!condition ? $.isFunction(ifCb) ? ifCb : $.noop : $.isFunction(elseCb) ? elseCb : $.noop);
     };
 
-    $.fn.enableMcu = function (clearVal) {
+    $.fn.enableLiar = function (clearVal) {
         return this.find(':input').enable(1);
     };
 
-    $.fn.disableMcu = function (clearVal) {
+    $.fn.disableLiar = function (clearVal) {
         return this.find(':input').enable(0);
     };
 
