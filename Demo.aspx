@@ -29,7 +29,7 @@
     </form>
 </body>
     <script type="text/javascript" src="Scripts/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="Scripts/jquery.mps.mcuobject.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.mps.liarobject.js"></script>
 
     <script type="text/javascript">
 
