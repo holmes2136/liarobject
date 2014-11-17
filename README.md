@@ -66,6 +66,23 @@ $("#Sample2").getLiarVal();
 ```
 
 
+Sample 3 : Access table value : 
+
+```javascript
+  <div id="table1" data-liartype="tbl">
+        <table>
+            <tbody>
+                <tr><td>1</td><td>Sherlock</td></tr>
+                <tr><td>2</td><td>Holmes</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+$("#table1").getLiarVal();
+>>>  [{"cell":["1","Sherlock"]},{"cell":["2","Holmes"]}]
+```
+
+
 
 
 
