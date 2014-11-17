@@ -40,8 +40,26 @@
             value = $ctl.text();
         } else if (liartype === 'hiddenbox') {
             value = $ctl.find(":input").val();
-        }
+        } else if (liartype === 'tbl') {
+            var $grid = $ctl.find('table');
 
+            if (!!!$grid) return;
+
+            var $gridTrs = $grid.find('tbody tr');
+            value = [];
+            $gridTrs.each(function (i, ele) {
+                var $td = $(ele).find('td');
+                var tmp = [];
+                var coltype = '';
+
+                $td.each(function (j, td) {
+                   tmp[j] = $.trim($(td).text());
+                });
+                value[i] = {
+                    cell: tmp
+                };
+            });
+        }
 
         return value;
     };
