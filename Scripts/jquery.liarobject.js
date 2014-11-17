@@ -38,6 +38,8 @@
             value = value.replace(/\//ig, '');
         } else if (liartype === 'label') {
             value = $ctl.text();
+        } else if (liartype === 'hiddenbox') {
+            value = $ctl.find(":input").val();
         }
 
 
@@ -72,6 +74,8 @@
             $ctl.find(':text').val(val.length === 8 ? val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8) : val);
         } else if (liartype === 'label') {
             $ctl.text(val);
+        } else if (liartype === "hiddenbox") {
+            $ctl.find(":input").val(val);
         } else {
             $ctl.find(':text,input[type=number],input[type=email], textarea').val(val);
         }
