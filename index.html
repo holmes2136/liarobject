@@ -40,17 +40,17 @@
 <h3>
 <a id="you-can" class="anchor" href="#you-can" aria-hidden="true"><span class="octicon octicon-link"></span></a>You can</h3>
 
-<pre><code>$("#checkgroup").getLiarVal();
-$("#checkbox").getLiarVal();
-$("#input").getLiarVal();
+<pre><code>$("#checkgroup_id").getLiarVal();
+$("#checkbox _id").getLiarVal();
+$("#input_id").getLiarVal();
 </code></pre>
 
 <h3>
 <a id="you-dont" class="anchor" href="#you-dont" aria-hidden="true"><span class="octicon octicon-link"></span></a>You don't</h3>
 
-<pre><code>$("#checkgroup").find(":radio:checked").val();
-$("#checkbox").find(":checkbox:checked").val();
-$("#input").find(":input").val();
+<pre><code>$("#checkgroup_id").find(":radio:checked").val();
+$("#checkbox_id").find(":checkbox:checked").val();
+$("#input_id").find(":input").val();
 </code></pre>
 
 <h3>
@@ -63,8 +63,8 @@ $("#input").find(":input").val();
 <h3>
 <a id="how-liarobject-works" class="anchor" href="#how-liarobject-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How liarobject works</h3>
 
-<p>Just attache data-liartype attribute on control , and liarobject will use it to judge controls
-Sample 1 : Access input value :</p>
+<p>Just attache data-liartype attribute on control , and liarobject library will use it to judge controls</p>
+<p>Sample 1 : Access input value :</p>
 
 <pre><code>&lt;div id="Sample1" data-liartype="text"&gt;
      &lt;input type="text"  value="test" /&gt;
