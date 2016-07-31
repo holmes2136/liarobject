@@ -41,7 +41,9 @@ http://keith-wood.name/localisation.html
           break;
         case 2:
           if (lang.length >= 2) {
-            file = "" + pkg + "-" + (lang.substring(0, 2)) + "." + fileExtension;
+            //update here
+	    //file = "" + pkg + "-" + (lang.substring(0, 2)) + "." + fileExtension;
+            file = "" + pkg + "-" + lang + "." + fileExtension;
             return jsonCall(file, pkg, lang, level);
           }
           break;
