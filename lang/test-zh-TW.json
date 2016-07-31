@@ -1,26 +1,16 @@
 {
   "test": {
-    "nested": "nested success",
-    "input": "input success",
-    "input_as_obj": {
-        "value": "input_as_obj value success",
-        "title": "input_as_obj title success"
-    },
-    "optgroup": "optgroup success",
-    "option": "option success",
-    "ruby_image": {
-      "src": "ruby_round.gif",
-      "alt": "a round ruby",
-      "title": "A Round Ruby"
-    },
-    "link": {
-      "text": "success",
-      "href": "http://success"
-    }
-  },
-  "basic": "basic success",
-  "with_title": {
-    "text": "with_title text success",
-    "title": "with_title title success"
-  }
+    "features": "特色",
+    "features_description": "你可以藉由同樣的介面存取值和內容",
+    "you_can":"你可以",
+    "you_don't":"你不用再",
+    "how_to_use_liarobject":"如何使用套件",
+    "how_liarobject_works":"套件如何運作",
+    "how_liarobject_works_desc":"只要在控制項上增加 data-liartype 屬性 , 套件將會使用它來判別控制項類型",
+    "Sample":"範例",
+    "access":"存取",
+    "input":"輸入控制項",
+    "value":"值",
+    "checkgroup":"勾選控制項",
+    "table":"表格"
 }
