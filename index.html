@@ -128,7 +128,8 @@ $("#table1").getLiarVal();
 
 	  <script type="text/javascript" charset="utf-8">
       		$(function(){
-        		var opts = { language: "zh-TW", pathPrefix: "lang" };
+			var language = window.navigator.userLanguage || window.navigator.language;
+        		var opts = { language: language, pathPrefix: "lang" };
         		$("[data-localize]").localize("test", opts)
       		})
           </script>
